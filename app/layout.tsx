@@ -4,7 +4,7 @@ import './globals.css';
 export const metadata: Metadata = {
   title: 'Xi Qin — Research & Open Source',
   description:
-    'Research systems, claim-relative evaluation, and open-source engineering by Xi Qin.',
+    'Claim-relative evaluation research and merged open-source contributions by Xi Qin.',
   metadataBase: new URL('https://qinxi-ai.github.io'),
   openGraph: {
     title: 'Xi Qin — Research & Open Source',
