@@ -41,8 +41,10 @@ export default defineConfig(async ({ command }) => {
   process.env.WRANGLER_LOG_PATH ??= '.wrangler/logs';
   process.env.MINIFLARE_REGISTRY_PATH ??= '.wrangler/registry';
 
+  const useCloudflareWorkerBuild =
+    command === 'serve' || process.env.SITES_BUILD === 'true';
   const cloudflarePlugin =
-    command === 'serve'
+    useCloudflareWorkerBuild
       ? [
           (
             await import('@cloudflare/vite-plugin')
