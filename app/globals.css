@@ -78,7 +78,7 @@ a:focus-visible {
   gap: 26px;
   color: var(--ink-soft);
   font-family: var(--font-mono);
-  font-size: 11px;
+  font-size: 12px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
@@ -103,7 +103,7 @@ a:focus-visible {
   justify-self: end;
   gap: 6px;
   font-family: var(--font-mono);
-  font-size: 11px;
+  font-size: 12px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
@@ -125,7 +125,7 @@ a:focus-visible {
   gap: 12px;
   color: var(--ink-soft);
   font-family: var(--font-mono);
-  font-size: 11px;
+  font-size: 12px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
@@ -181,7 +181,7 @@ a:focus-visible {
   margin-top: 8px;
   color: var(--ink-soft);
   font-family: var(--font-mono);
-  font-size: 10px;
+  font-size: 12px;
   font-style: normal;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -198,14 +198,14 @@ a:focus-visible {
 .section-index {
   color: var(--accent);
   font-family: var(--font-mono);
-  font-size: 11px;
+  font-size: 12px;
 }
 
 .section-heading p {
   margin: 0 0 16px;
   color: var(--ink-soft);
   font-family: var(--font-mono);
-  font-size: 10px;
+  font-size: 12px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
 }
@@ -232,7 +232,7 @@ a:focus-visible {
   gap: 16px;
   color: var(--accent);
   font-family: var(--font-mono);
-  font-size: 10px;
+  font-size: 12px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
@@ -251,7 +251,7 @@ a:focus-visible {
   max-width: 700px;
   margin: 0;
   color: var(--ink-soft);
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.75;
 }
 
@@ -263,7 +263,7 @@ a:focus-visible {
   padding-top: 18px;
   border-top: 1px solid var(--line);
   font-family: var(--font-mono);
-  font-size: 11px;
+  font-size: 12px;
 }
 
 .paper-footer a {
@@ -317,7 +317,7 @@ a:focus-visible {
 .paper-object p {
   margin: 10px 0 0;
   color: var(--ink-soft);
-  font-size: 12px;
+  font-size: 14px;
   line-height: 1.55;
 }
 
@@ -352,7 +352,7 @@ a:focus-visible {
   margin-top: 20px;
   color: var(--paper-deep);
   font-family: var(--font-mono);
-  font-size: 9px;
+  font-size: 12px;
   letter-spacing: 0.07em;
   line-height: 1.5;
   text-transform: uppercase;
@@ -368,7 +368,7 @@ a:focus-visible {
 .paper-findings-title > span {
   color: var(--accent);
   font-family: var(--font-mono);
-  font-size: 10px;
+  font-size: 12px;
   letter-spacing: 0.09em;
   text-transform: uppercase;
 }
@@ -398,14 +398,14 @@ a:focus-visible {
 .paper-findings li > span {
   color: var(--accent);
   font-family: var(--font-mono);
-  font-size: 10px;
+  font-size: 12px;
 }
 
 .paper-findings li p {
   max-width: 640px;
   margin: 0;
   color: var(--ink-soft);
-  font-size: 13px;
+  font-size: 15px;
   line-height: 1.65;
 }
 
@@ -422,7 +422,7 @@ a:focus-visible {
   padding: 13px 14px;
   background: var(--paper);
   font-family: var(--font-mono);
-  font-size: 9px;
+  font-size: 12px;
   letter-spacing: 0.05em;
   text-align: center;
   text-transform: uppercase;
@@ -444,7 +444,7 @@ a:focus-visible {
   margin-top: 22px;
   color: var(--ink-soft);
   font-family: var(--font-mono);
-  font-size: 9px;
+  font-size: 12px;
   font-style: normal;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -458,13 +458,13 @@ a:focus-visible {
   padding: 26px 0;
   color: var(--ink-soft);
   font-family: var(--font-display);
-  font-size: 15px;
+  font-size: 16px;
   font-style: italic;
 }
 
 .motto-band span:last-child {
   font-family: var(--font-mono);
-  font-size: 9px;
+  font-size: 12px;
   font-style: normal;
   letter-spacing: 0.09em;
   text-transform: uppercase;
@@ -501,7 +501,7 @@ a:focus-visible {
   gap: 18px;
   color: var(--ink-soft);
   font-family: var(--font-mono);
-  font-size: 9px;
+  font-size: 12px;
   letter-spacing: 0.07em;
   text-transform: uppercase;
 }
@@ -514,7 +514,7 @@ a:focus-visible {
   margin: 48px 0 14px;
   color: var(--ink-soft);
   font-family: var(--font-mono);
-  font-size: 10px;
+  font-size: 12px;
   letter-spacing: 0.04em;
 }
 
@@ -534,7 +534,7 @@ a:focus-visible {
 .contribution-summary {
   margin: 22px 0 30px;
   color: var(--ink-soft);
-  font-size: 13px;
+  font-size: 15px;
   line-height: 1.65;
 }
 
@@ -547,7 +547,7 @@ a:focus-visible {
   border-bottom: 1px solid var(--line);
   color: var(--ink-soft);
   font-family: var(--font-mono);
-  font-size: 9px;
+  font-size: 12px;
   line-height: 1.45;
 }
 
@@ -557,7 +557,7 @@ a:focus-visible {
   justify-content: space-between;
   margin-top: 18px;
   font-family: var(--font-mono);
-  font-size: 10px;
+  font-size: 12px;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   transition: color 180ms ease;
@@ -594,7 +594,7 @@ a:focus-visible {
 .project-language {
   color: var(--ink-soft);
   font-family: var(--font-mono);
-  font-size: 10px;
+  font-size: 12px;
   letter-spacing: 0.06em;
   text-transform: uppercase;
 }
@@ -613,7 +613,7 @@ a:focus-visible {
 .project-copy > span {
   max-width: 560px;
   color: var(--ink-soft);
-  font-size: 13px;
+  font-size: 15px;
   line-height: 1.5;
 }
 
@@ -634,7 +634,7 @@ a:focus-visible {
 .recognition-row time {
   color: var(--ink-soft);
   font-family: var(--font-mono);
-  font-size: 10px;
+  font-size: 12px;
 }
 
 .recognition-row strong {
@@ -645,7 +645,75 @@ a:focus-visible {
 
 .recognition-row > span:nth-child(3) {
   color: var(--accent);
-  font-size: 13px;
+  font-size: 15px;
+}
+
+.principles {
+  display: grid;
+  grid-template-columns: minmax(220px, 0.42fr) minmax(0, 1fr);
+  gap: 104px;
+  padding: 88px 104px;
+  border-bottom: 1px solid var(--line);
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.principles-heading p {
+  margin: 0 0 18px;
+  color: var(--accent-soft);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.principles-heading h2 {
+  max-width: 300px;
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(36px, 4vw, 58px);
+  font-weight: 400;
+  letter-spacing: -0.035em;
+  line-height: 0.98;
+}
+
+.principles-list {
+  display: grid;
+  border-top: 1px solid rgba(243, 240, 232, 0.42);
+}
+
+.principles-list blockquote {
+  display: grid;
+  grid-template-columns: 42px minmax(0, 1fr) auto;
+  gap: 20px;
+  align-items: baseline;
+  margin: 0;
+  padding: 30px 0;
+  border-bottom: 1px solid rgba(243, 240, 232, 0.24);
+}
+
+.principles-list blockquote > span {
+  color: var(--accent-soft);
+  font-family: var(--font-mono);
+  font-size: 12px;
+}
+
+.principles-list p {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(27px, 3.2vw, 44px);
+  font-style: italic;
+  letter-spacing: -0.025em;
+}
+
+.principles-list cite {
+  color: var(--paper-deep);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-style: normal;
+  letter-spacing: 0.07em;
+  text-align: right;
+  text-transform: uppercase;
 }
 
 .closing-motto {
@@ -666,7 +734,7 @@ a:focus-visible {
   margin-top: 12px;
   color: var(--ink-soft);
   font-family: var(--font-mono);
-  font-size: 9px;
+  font-size: 12px;
   letter-spacing: 0.16em;
   text-transform: uppercase;
 }
@@ -683,7 +751,7 @@ footer p {
   margin: 0 0 8px;
   color: var(--ink-soft);
   font-family: var(--font-mono);
-  font-size: 9px;
+  font-size: 12px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
 }
@@ -704,7 +772,7 @@ footer > div:first-child a {
   align-items: center;
   gap: 7px;
   font-family: var(--font-mono);
-  font-size: 10px;
+  font-size: 12px;
   text-transform: uppercase;
 }
 
@@ -735,7 +803,8 @@ footer > div:first-child a {
 
   .hero-bottom,
   .section,
-  .paper-findings {
+  .paper-findings,
+  .principles {
     grid-template-columns: 1fr;
   }
 
@@ -758,6 +827,11 @@ footer > div:first-child a {
 
   .paper-findings {
     gap: 32px;
+  }
+
+  .principles {
+    gap: 48px;
+    padding: 72px 48px;
   }
 }
 
@@ -859,6 +933,20 @@ footer > div:first-child a {
 
   .motto-band span:last-child {
     display: none;
+  }
+
+  .principles {
+    padding: 64px 24px;
+  }
+
+  .principles-list blockquote {
+    grid-template-columns: 28px minmax(0, 1fr);
+    gap: 12px;
+  }
+
+  .principles-list cite {
+    grid-column: 2;
+    text-align: left;
   }
 
   footer {

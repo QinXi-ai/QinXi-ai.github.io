@@ -6,6 +6,9 @@ export const metadata: Metadata = {
   description:
     'Claim-relative evaluation research and merged open-source contributions by Xi Qin.',
   metadataBase: new URL('https://qinxi-ai.github.io'),
+  icons: {
+    icon: [{ url: '/favicon.svg', type: 'image/svg+xml' }],
+  },
   openGraph: {
     title: 'Xi Qin — Research & Open Source',
     description:

@@ -98,6 +98,21 @@ const recognition = [
   ['本源杯', '一等奖'],
 ];
 
+const principles = [
+  {
+    latin: 'Lex me quoque ligat.',
+    english: 'The law binds me too.',
+  },
+  {
+    latin: 'In dubio, siste.',
+    english: 'When in doubt, stop.',
+  },
+  {
+    latin: 'Nihil ultra testimonium.',
+    english: 'Nothing beyond the evidence.',
+  },
+];
+
 export default function Home() {
   return (
     <main>
@@ -345,6 +360,22 @@ export default function Home() {
                 <span>{award}</span>
                 <time dateTime="2026">2026</time>
               </div>
+            ))}
+          </div>
+        </section>
+
+        <section className="principles" aria-labelledby="principles-title">
+          <div className="principles-heading">
+            <p>Three operating principles</p>
+            <h2 id="principles-title">Bound by the record</h2>
+          </div>
+          <div className="principles-list">
+            {principles.map((principle, index) => (
+              <blockquote key={principle.latin}>
+                <span>{String(index + 1).padStart(2, '0')}</span>
+                <p lang="la">{principle.latin}</p>
+                <cite>{principle.english}</cite>
+              </blockquote>
             ))}
           </div>
         </section>
