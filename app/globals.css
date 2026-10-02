@@ -36,8 +36,7 @@ body {
   margin: 0;
   color: var(--ink);
   background:
-    linear-gradient(rgba(27, 29, 27, 0.025) 1px, transparent 1px),
-    var(--paper);
+    linear-gradient(rgba(27, 29, 27, 0.025) 1px, transparent 1px), var(--paper);
   background-size: 100% 32px;
   font-family: var(--font-ui);
   -webkit-font-smoothing: antialiased;
@@ -479,6 +478,28 @@ a:focus-visible {
   border-top: 1px solid var(--line);
 }
 
+.section-note {
+  margin: 0 0 20px;
+  color: var(--ink-soft);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.section-more {
+  display: inline-flex;
+  gap: 12px;
+  align-items: center;
+  margin-top: 24px;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 5px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+}
+
+.section-more:hover {
+  color: var(--accent);
+}
+
 .contribution-list {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -582,7 +603,9 @@ a:focus-visible {
   align-items: center;
   min-height: 126px;
   border-bottom: 1px solid var(--line);
-  transition: color 180ms ease, padding 180ms ease;
+  transition:
+    color 180ms ease,
+    padding 180ms ease;
 }
 
 .project-row:hover {
@@ -623,29 +646,102 @@ a:focus-visible {
 
 .recognition-row {
   display: grid;
-  grid-template-columns: 42px 1fr auto 56px;
-  gap: 20px;
-  align-items: center;
-  min-height: 66px;
+  grid-template-columns: 28px minmax(0, 1fr) 124px;
+  gap: 22px 18px;
+  align-items: start;
+  padding: 30px 0;
   border-bottom: 1px solid var(--line);
 }
 
-.recognition-row > span:first-child,
+.recognition-number,
 .recognition-row time {
   color: var(--ink-soft);
   font-family: var(--font-mono);
   font-size: 12px;
 }
 
-.recognition-row strong {
+.recognition-number {
+  padding-top: 5px;
+}
+
+.recognition-heading h3 {
+  margin: 0;
   font-family: var(--font-display);
-  font-size: 19px;
+  font-size: clamp(22px, 2.2vw, 29px);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+}
+
+.recognition-event-zh {
+  margin: 10px 0 18px;
+  color: var(--ink-soft);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.recognition-track {
+  margin: 0 0 6px;
+  color: var(--accent);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.recognition-track-zh {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.recognition-award {
+  display: grid;
+  gap: 6px;
+  text-align: right;
+}
+
+.recognition-award time {
+  margin: 5px 0 14px;
+}
+
+.recognition-award strong {
+  color: var(--accent);
+  font-family: var(--font-display);
+  font-size: 20px;
   font-weight: 400;
 }
 
-.recognition-row > span:nth-child(3) {
+.recognition-award > span {
   color: var(--accent);
-  font-size: 15px;
+  font-size: 14px;
+}
+
+.recognition-description {
+  grid-column: 2 / -1;
+  color: var(--ink-soft);
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.recognition-description p {
+  margin: 0 0 12px;
+}
+
+.recognition-description [lang='zh-CN'] {
+  line-height: 1.85;
+}
+
+.recognition-description a {
+  display: inline-block;
+  margin-top: 4px;
+  padding-bottom: 3px;
+  border-bottom: 1px solid var(--line);
+  color: var(--ink);
+  font-size: 12px;
+}
+
+.recognition-description a:hover {
+  color: var(--accent);
 }
 
 .principles {
@@ -919,12 +1015,34 @@ footer > div:first-child a {
   }
 
   .recognition-row {
-    grid-template-columns: 28px 1fr auto;
-    gap: 12px;
+    grid-template-columns: 24px minmax(0, 1fr);
+    gap: 18px 12px;
+    padding: 26px 0;
   }
 
-  .recognition-row time {
-    display: none;
+  .recognition-heading h3 {
+    font-size: 23px;
+  }
+
+  .recognition-award {
+    grid-column: 2;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: baseline;
+    text-align: left;
+  }
+
+  .recognition-award time {
+    margin: 0;
+  }
+
+  .recognition-award strong {
+    font-size: 18px;
+  }
+
+  .recognition-description {
+    grid-column: 1 / -1;
   }
 
   .motto-band {

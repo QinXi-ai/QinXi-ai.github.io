@@ -1,102 +1,9 @@
-const projects = [
-  {
-    name: 'evalspec-audit',
-    description:
-      'Auditable evaluation specifications for claim-aware, reproducible LLM benchmarking.',
-    language: 'Python',
-    href: 'https://github.com/QinXi-ai/evalspec-audit',
-  },
-  {
-    name: 'moonguard',
-    description:
-      'API and semantic-versioning safety tooling for MoonBit libraries.',
-    language: 'MoonBit',
-    href: 'https://github.com/QinXi-ai/moonguard',
-  },
-  {
-    name: 'openvela-smarthome-agent',
-    description:
-      'An evidence-bounded agent demonstration for embedded smart-home workflows.',
-    language: 'C++',
-    href: 'https://github.com/QinXi-ai/openvela-smarthome-agent',
-  },
-];
-
-const contributions = [
-  {
-    repo: 'darthjee / navi',
-    number: '#716',
-    title: 'Refactor CssSelectorParser',
-    category: 'Architecture',
-    summary:
-      'Split a monolithic parser into focused HTML-root, value-resolution, field-mapping, and filter components while preserving both public parser surfaces.',
-    proof: '1,494 specs · changed modules at 100% coverage',
-    stats: '+630 −77 · 16 files',
-    href: 'https://github.com/darthjee/navi/pull/716',
-  },
-  {
-    repo: 'awslabs / stickler',
-    number: '#284',
-    title: 'Replace sklearn metrics with NumPy',
-    category: 'Numerical methods',
-    summary:
-      'Implemented ROC AUC, Rand index, V-measure, and Kendall tau-b in NumPy, removing scikit-learn from the core dependency surface.',
-    proof: '1,947 portable tests passed · 130 affected/oracle tests',
-    stats: '+269 −66 · 10 files',
-    href: 'https://github.com/awslabs/stickler/pull/284',
-  },
-  {
-    repo: 'holaboss-ai / holaOS',
-    number: '#470',
-    title: 'Support attachments in the project composer',
-    category: 'Product systems',
-    summary:
-      'Added ordered local and Explorer attachments, previews, limits, attachment-only submits, and retry behavior that avoids orphaned sessions.',
-    proof: 'Focused tests passed · TypeScript transpilation clean',
-    stats: '+725 −22 · 5 files',
-    href: 'https://github.com/holaboss-ai/holaOS/pull/470',
-  },
-  {
-    repo: '3b1b / manim',
-    number: '#2501',
-    title: 'Fix batched 2D vector rotation',
-    category: 'Geometry',
-    summary:
-      'Added a planar rotation path for (N, 2) arrays while retaining the existing axis-angle behavior for individual and batched 3D vectors.',
-    proof: 'Four focused 2D/3D regression cases',
-    stats: '+53 −2 · 2 files',
-    href: 'https://github.com/3b1b/manim/pull/2501',
-  },
-  {
-    repo: 'lacs-project / sysknife',
-    number: '#256',
-    title: 'Neutralise preference envelope tags',
-    category: 'Prompt security',
-    summary:
-      'Closed a saved-preference prompt-envelope boundary by neutralising both opening and closing tags in new, legacy, and manually edited files.',
-    proof: '56 exact-module tests passed',
-    stats: '+212 −31 · 6 files',
-    href: 'https://github.com/lacs-project/sysknife/pull/256',
-  },
-  {
-    repo: 'tarolling / seiri',
-    number: '#173',
-    title: 'Contain import resolution inside project roots',
-    category: 'Path security',
-    summary:
-      'Required canonical import targets to remain inside the project root across C++, Python, and TypeScript, with graph-level rejection as a second boundary.',
-    proof: '109-test suite · Clippy clean',
-    stats: '+95 −18 · 4 files',
-    href: 'https://github.com/tarolling/seiri/pull/173',
-  },
-];
-
-const recognition = [
-  ['CCF 开源大赛', '一等奖'],
-  ['CCF 开源大赛', '三等奖'],
-  ['电工杯', '二等奖'],
-  ['本源杯', '一等奖'],
-];
+import {
+  contributions,
+  portfolioUpdated,
+  projects,
+  recognition,
+} from './portfolio';
 
 const principles = [
   {
@@ -155,7 +62,11 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="research" className="section featured-paper" aria-labelledby="research-title">
+        <section
+          id="research"
+          className="section featured-paper"
+          aria-labelledby="research-title"
+        >
           <div className="section-index">01</div>
           <div className="section-heading">
             <p>Featured research</p>
@@ -178,7 +89,11 @@ export default function Home() {
               </p>
               <div className="paper-footer">
                 <span>Xi Qin · Wuhan University</span>
-                <a href="https://arxiv.org/abs/2608.19269" target="_blank" rel="noreferrer">
+                <a
+                  href="https://arxiv.org/abs/2608.19269"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   Read on arXiv <span aria-hidden="true">↗</span>
                 </a>
               </div>
@@ -188,21 +103,30 @@ export default function Home() {
               <div>
                 <span>D</span>
                 <strong>Frozen substrate</strong>
-                <p>Versioned inputs, observations, traces, state, and support.</p>
+                <p>
+                  Versioned inputs, observations, traces, state, and support.
+                </p>
               </div>
               <div>
                 <span>F</span>
                 <strong>Grounded family</strong>
-                <p>Primary admissible readings and a separate review envelope.</p>
+                <p>
+                  Primary admissible readings and a separate review envelope.
+                </p>
               </div>
               <div>
                 <span>q</span>
                 <strong>Claim query</strong>
-                <p>Exact score, winner, complete order, or pairwise relation.</p>
+                <p>
+                  Exact score, winner, complete order, or pairwise relation.
+                </p>
               </div>
             </div>
 
-            <div className="census-strip" aria-label="Commit-bound census results">
+            <div
+              className="census-strip"
+              aria-label="Commit-bound census results"
+            >
               <div>
                 <strong>124</strong>
                 <span>mechanically eligible units</span>
@@ -220,30 +144,33 @@ export default function Home() {
             <div className="paper-findings">
               <div className="paper-findings-title">
                 <span>What the paper adds</span>
-                <p>Not another benchmark score—a contract for what may be inferred.</p>
+                <p>
+                  Not another benchmark score—a contract for what may be
+                  inferred.
+                </p>
               </div>
               <ol>
                 <li>
                   <span>01</span>
                   <p>
                     Every unit receives a terminal record. A STOP is not a zero
-                    score; it identifies the first missing object and the minimum
-                    artifact needed to unblock replay.
+                    score; it identifies the first missing object and the
+                    minimum artifact needed to unblock replay.
                   </p>
                 </li>
                 <li>
                   <span>02</span>
                   <p>
-                    Primary and review families remain separate. A winner can stay
-                    identified even when the complete order does not.
+                    Primary and review families remain separate. A winner can
+                    stay identified even when the complete order does not.
                   </p>
                 </li>
                 <li>
                   <span>03</span>
                   <p>
-                    A fresh run cannot reconstruct a historical evaluation event.
-                    Replay requires bound observations, mediator decisions, state,
-                    support joins, and semantic admission.
+                    A fresh run cannot reconstruct a historical evaluation
+                    event. Replay requires bound observations, mediator
+                    decisions, state, support joins, and semantic admission.
                   </p>
                 </li>
               </ol>
@@ -284,28 +211,45 @@ export default function Home() {
             <p>Open-source contributions</p>
             <h2 id="contributions-title">Changes that landed</h2>
           </div>
-          <div className="contribution-list">
-            {contributions.map((contribution, index) => (
-              <article className="contribution-card" key={contribution.href}>
-                <div className="contribution-meta">
-                  <span>{String(index + 1).padStart(2, '0')}</span>
-                  <span>{contribution.category}</span>
-                  <span className="merged-mark">Merged</span>
-                </div>
-                <p className="contribution-repo">
-                  {contribution.repo} <span>{contribution.number}</span>
-                </p>
-                <h3>{contribution.title}</h3>
-                <p className="contribution-summary">{contribution.summary}</p>
-                <div className="contribution-proof">
-                  <span>{contribution.proof}</span>
-                  <span>{contribution.stats}</span>
-                </div>
-                <a href={contribution.href} target="_blank" rel="noreferrer">
-                  Inspect the pull request <span aria-hidden="true">↗</span>
-                </a>
-              </article>
-            ))}
+          <div className="contribution-content">
+            <p className="section-note">
+              Selected contributions merged upstream. Updated{' '}
+              <time dateTime={portfolioUpdated}>2 October 2026</time>.
+            </p>
+            <div className="contribution-list">
+              {contributions.map((contribution, index) => (
+                <article className="contribution-card" key={contribution.href}>
+                  <div className="contribution-meta">
+                    <span>{String(index + 1).padStart(2, '0')}</span>
+                    <span>{contribution.category}</span>
+                    <span className="merged-mark">Merged</span>
+                  </div>
+                  <p className="contribution-repo">
+                    {contribution.repo} <span>{contribution.number}</span>
+                  </p>
+                  <h3>{contribution.title}</h3>
+                  <p className="contribution-summary">{contribution.summary}</p>
+                  <div className="contribution-proof">
+                    <span>{contribution.proof}</span>
+                    <span>{contribution.stats}</span>
+                    <time dateTime={contribution.mergedAt}>
+                      Merged {contribution.mergedAt}
+                    </time>
+                  </div>
+                  <a href={contribution.href} target="_blank" rel="noreferrer">
+                    Inspect the pull request <span aria-hidden="true">↗</span>
+                  </a>
+                </article>
+              ))}
+            </div>
+            <a
+              className="section-more"
+              href="https://github.com/search?q=is%3Apr+author%3AQinXi-ai+is%3Amerged+is%3Apublic&type=pullrequests"
+              target="_blank"
+              rel="noreferrer"
+            >
+              All merged pull requests <span aria-hidden="true">↗</span>
+            </a>
           </div>
         </section>
 
@@ -315,11 +259,15 @@ export default function Home() {
           <span>The work speaks for itself</span>
         </div>
 
-        <section id="work" className="section selected-work" aria-labelledby="work-title">
+        <section
+          id="work"
+          className="section selected-work"
+          aria-labelledby="work-title"
+        >
           <div className="section-index">03</div>
           <div className="section-heading">
             <p>Selected work</p>
-            <h2 id="work-title">Tools with boundaries</h2>
+            <h2 id="work-title">Research tools &amp; systems</h2>
           </div>
           <div className="project-list">
             {projects.map((project, index) => (
@@ -350,16 +298,38 @@ export default function Home() {
           <div className="section-index">04</div>
           <div className="section-heading">
             <p>Selected recognition</p>
-            <h2 id="recognition-title">Small marks, serious work</h2>
+            <h2 id="recognition-title">Competitions &amp; awards</h2>
           </div>
           <div className="recognition-list">
-            {recognition.map(([event, award], index) => (
-              <div className="recognition-row" key={`${event}-${award}`}>
-                <span>{String(index + 1).padStart(2, '0')}</span>
-                <strong>{event}</strong>
-                <span>{award}</span>
-                <time dateTime="2026">2026</time>
-              </div>
+            {recognition.map((item, index) => (
+              <article className="recognition-row" key={item.id}>
+                <span className="recognition-number">
+                  {String(index + 1).padStart(2, '0')}
+                </span>
+                <div className="recognition-heading">
+                  <h3>{item.eventEn}</h3>
+                  <p className="recognition-event-zh" lang="zh-CN">
+                    {item.eventZh}
+                  </p>
+                  <p className="recognition-track">{item.trackEn}</p>
+                  <p className="recognition-track-zh" lang="zh-CN">
+                    {item.trackZh}
+                  </p>
+                </div>
+                <div className="recognition-award">
+                  <time dateTime={item.year}>{item.year}</time>
+                  <strong>{item.awardEn}</strong>
+                  <span lang="zh-CN">{item.awardZh}</span>
+                </div>
+                <div className="recognition-description">
+                  <p>{item.descriptionEn}</p>
+                  <p lang="zh-CN">{item.descriptionZh}</p>
+                  <a href={item.source} target="_blank" rel="noreferrer">
+                    Competition details <span lang="zh-CN">/ 赛事介绍</span>{' '}
+                    <span aria-hidden="true">↗</span>
+                  </a>
+                </div>
+              </article>
             ))}
           </div>
         </section>
@@ -391,10 +361,18 @@ export default function Home() {
             <a href="mailto:3624951962qx@gmail.com">3624951962qx@gmail.com</a>
           </div>
           <div className="footer-links">
-            <a href="https://github.com/QinXi-ai" target="_blank" rel="noreferrer">
+            <a
+              href="https://github.com/QinXi-ai"
+              target="_blank"
+              rel="noreferrer"
+            >
               GitHub ↗
             </a>
-            <a href="https://arxiv.org/abs/2608.19269" target="_blank" rel="noreferrer">
+            <a
+              href="https://arxiv.org/abs/2608.19269"
+              target="_blank"
+              rel="noreferrer"
+            >
               arXiv ↗
             </a>
             <a href="mailto:3624951962qx@gmail.com">Email ↗</a>
