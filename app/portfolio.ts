@@ -1,7 +1,25 @@
-// Public project descriptions and merged PRs checked on 2026-10-02.
-export const portfolioUpdated = '2026-10-02';
+// Public contribution snapshot checked against GitHub on 2026-10-20.
+export const portfolioUpdated = '2026-10-20';
+export const contributionStats = { merged: 67, repositories: 27, recent: 14 };
+export const mergedSearch =
+  'https://github.com/search?q=is%3Apr+author%3AQinXi-ai+is%3Amerged+is%3Apublic+-user%3AQinXi-ai&type=pullrequests';
+export const latestPaper = {
+  title: 'Exact Three-Example Selection in Every Dimension',
+  date: '2026-10-03',
+  doi: '10.5281/zenodo.23119254',
+  href: 'https://zenodo.org/records/23119254',
+  pdf: 'https://zenodo.org/records/23119254/files/exact-three-example-selection.pdf',
+  source: 'https://zenodo.org/records/23119254/files/exact-three-example-selection-source-v1.0.zip',
+};
 
 export const projects = [
+  {
+    name: 'Pocket MOSS Image',
+    description:
+      'Low-memory MOSS-Image inference: the original 9B text encoder with packed INT6 weights and a streamed, fused INT8 DiT. No retraining or replacement encoder.',
+    language: 'Python / PyTorch',
+    href: 'https://github.com/QinXi-ai/pocket-moss-image',
+  },
   {
     name: 'evalspec-audit',
     description:
@@ -49,6 +67,42 @@ export const projects = [
 export const contributions = [
   {
     repo: 'apache / datafusion',
+    number: '#25765',
+    title: 'Give lazy generators a serialization hook',
+    category: 'Query engines',
+    summary:
+      'Let LazyMemoryExec generators encode themselves while preserving the existing single-generator wire format, extension fallback, and repeatable execution after a round trip.',
+    proof: 'Legacy wire compatibility · round-trip execution tests',
+    stats: '+804 −240 · 11 files',
+    mergedAt: '2026-10-19',
+    href: 'https://github.com/apache/datafusion/pull/25765',
+  },
+  {
+    repo: 'microsoft / vscode-eslint',
+    number: '#2227',
+    title: 'Keep linting inside the workspace',
+    category: 'Developer tools',
+    summary:
+      'Added an opt-in setting to skip local files outside the workspace, while retaining standalone-file, untitled, and virtual-document behavior.',
+    proof: '30 client/server tests · workspace boundary regressions',
+    stats: '+229 −73 · 8 files',
+    mergedAt: '2026-10-16',
+    href: 'https://github.com/microsoft/vscode-eslint/pull/2227',
+  },
+  {
+    repo: 'lacs-project / sysknife',
+    number: '#573',
+    title: 'Redact credentials before tools reach the model',
+    category: 'Agent security',
+    summary:
+      'Screen read-tool results and retained provider context for plaintext credentials, preserving useful log records and ordinary host information.',
+    proof: 'Recording-provider regression · 1,949 Linux tests',
+    stats: '+617 −7 · 10 files',
+    mergedAt: '2026-10-12',
+    href: 'https://github.com/lacs-project/sysknife/pull/573',
+  },
+  {
+    repo: 'apache / datafusion',
     number: '#25150',
     title: 'Skip hashing for fully ordered group keys',
     category: 'Query engines',
@@ -83,18 +137,6 @@ export const contributions = [
     stats: '+269 −66 · 10 files',
     mergedAt: '2026-08-28',
     href: 'https://github.com/awslabs/stickler/pull/284',
-  },
-  {
-    repo: 'lacs-project / sysknife',
-    number: '#514',
-    title: 'Keep credentials out of language-model planning',
-    category: 'Agent security',
-    summary:
-      'Removed credential-taking actions from the natural-language planner until a separate credential channel exists. Schema, parser, and prompt checks enforce the same boundary.',
-    proof: '1,883 Linux CI tests passed · schema and parser regressions',
-    stats: '+305 −32 · 11 files',
-    mergedAt: '2026-10-01',
-    href: 'https://github.com/lacs-project/sysknife/pull/514',
   },
   {
     repo: 'AndreaBozzo / dataprof',

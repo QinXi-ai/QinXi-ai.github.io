@@ -4,7 +4,7 @@ import './globals.css';
 export const metadata: Metadata = {
   title: 'Xi Qin — Research & Open Source',
   description:
-    'Claim-relative evaluation research and merged open-source contributions by Xi Qin.',
+    'Learning theory, reproducible AI evaluation, and open-source engineering by Xi Qin at Wuhan University.',
   metadataBase: new URL('https://qinxi-ai.github.io'),
   icons: {
     icon: [{ url: '/favicon.svg', type: 'image/svg+xml' }],
@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Xi Qin — Research & Open Source',
     description:
-      'Research systems that turn ambitious AI claims into reproducible evidence.',
+      'From first principles to working code. Learning theory, AI evaluation, and open-source engineering.',
     type: 'website',
     images: [
       {
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Xi Qin — Research & Open Source',
     description:
-      'Research systems that turn ambitious AI claims into reproducible evidence.',
+      'From first principles to working code. Learning theory, AI evaluation, and open-source engineering.',
     images: ['/og.png'],
   },
 };
