@@ -1,6 +1,6 @@
 import {
-  contributions, contributionStats, latestPaper, mergedSearch,
-  portfolioUpdated, projects, recognition,
+  contributions, contributionStats, selectionPaper, latestPaper, identityPaper, mergedSearch,
+  portfolioUpdated, researchUpdated, researchStats, projects, recognition,
 } from './portfolio';
 
 function Arrow() { return <span aria-hidden="true">↗</span>; }
@@ -74,6 +74,7 @@ export default function Home() {
             <div className="hero-actions">
               <a className="button button-dark" href="#research">Explore the research <span aria-hidden="true">↓</span></a>
               <a className="text-link" href="https://github.com/QinXi-ai" target="_blank" rel="noreferrer">Find me on GitHub <Arrow /></a>
+              <a className="text-link" href={latestPaper.href}>Latest paper · {latestPaper.venue} <span aria-hidden="true">↓</span></a>
             </div>
           </div>
           <div className="hero-art">
@@ -83,7 +84,7 @@ export default function Home() {
           </div>
         </section>
         <div className="overview" aria-label="Portfolio at a glance">
-          <div><strong>02</strong><span>Research preprints</span></div>
+          <a href="#research"><strong>{String(researchStats.papers).padStart(2, '0')}</strong><span>Research papers<br />{researchStats.accepted} accepted · {researchStats.preprints} preprints</span></a>
           <a href={mergedSearch} target="_blank" rel="noreferrer"><strong>{contributionStats.merged}</strong><span>Public PRs merged <Arrow /></span></a>
           <div><strong>{contributionStats.repositories}</strong><span>Repositories contributed to</span></div>
           <a href="#recognition"><strong>04</strong><span>Competition awards <Arrow /></span></a>
@@ -92,10 +93,48 @@ export default function Home() {
           <SectionHeading number="01" label="Selected research" title="Questions, made precise." id="research-title">
             <p className="section-intro">Sharp mathematical answers and evaluations you can inspect.</p>
           </SectionHeading>
+          <article id="failure-steps-are-not-repair-intents" className="paper-feature">
+            <div className="paper-main">
+              <div className="paper-meta"><span className="tag">{latestPaper.status}</span><span>{latestPaper.venue}</span></div>
+              <h3>{latestPaper.title}</h3>
+              <p className="paper-lead">Do different blamed execution steps imply different repairs?</p>
+              <p>We study expert-recommended actions from MP-Bench through a prediction-blind,
+                human-audited model-assisted analysis of <strong>96 multi-agent traces</strong> and <strong>1,436 actions</strong>.</p>
+              <p>In the primary analysis, <strong>85.1% of traces</strong> contain fewer distinct repair intents
+                than blamed steps, while top repair-set alignment reaches <strong>95.7%</strong>. The findings
+                show how step-level evaluation can overstate actionable diversity while often preserving
+                the first repair priority.</p>
+              <div className="paper-byline"><strong>{latestPaper.author}</strong><span>{latestPaper.venue} · {latestPaper.status}</span></div>
+            </div>
+            <aside className="theorem-panel" aria-label="Repair-intent study highlights">
+              <p className="eyebrow">Multi-agent system diagnosis</p>
+              <h4>From steps<br />to repair intents.</h4>
+              <p className="theorem-caption">Primary analysis · MP-Bench</p>
+              <dl>
+                <div><dt>Multi-agent traces</dt><dd>96</dd></div>
+                <div><dt>Expert-recommended actions</dt><dd>1,436</dd></div>
+                <div><dt>Traces with fewer repair intents</dt><dd>85.1%</dd></div>
+                <div><dt>Top repair-set alignment</dt><dd>95.7%</dd></div>
+              </dl>
+              <p className="theorem-note">Prediction-blind, human-audited model-assisted analysis of expert-recommended repair intent.</p>
+            </aside>
+          </article>
+          <article className="paper-secondary">
+            <div><p className="eyebrow">Latest preprint · Distribution testing · 23 October 2026</p>
+              <h3><a href={identityPaper.href} target="_blank" rel="noreferrer">{identityPaper.title}</a></h3>
+              <p>How many samples are needed to test whether an unknown distribution equals a specified reference—at the total-variation radius actually given? I give an explicit characterization, up to universal constants, for every finite or countable reference distribution at the original radius.</p>
+              <p>The preprint resolves <strong>Canonne&apos;s COLT 2024 Open Question 1</strong> in the countable-alphabet model, with matching upper and lower bounds and a polynomial-time factor-two approximation for explicit rational input.</p>
+            </div>
+            <div className="secondary-links"><span>Xi Qin · Wuhan University</span>
+              <a className="text-link" href={identityPaper.pdf} target="_blank" rel="noreferrer">Read the paper <Arrow /></a>
+              <a className="text-link" href={identityPaper.source}>LaTeX source <span aria-hidden="true">↓</span></a>
+              <a className="doi" href={`https://doi.org/${identityPaper.doi}`} target="_blank" rel="noreferrer">DOI {identityPaper.doi} <Arrow /></a>
+            </div>
+          </article>
           <article className="paper-feature">
             <div className="paper-main">
-              <div className="paper-meta"><span className="tag">Latest preprint</span><span>Learning theory · October 2026</span></div>
-              <h3><a href={latestPaper.href} target="_blank" rel="noreferrer">{latestPaper.title}</a></h3>
+              <div className="paper-meta"><span className="tag">Preprint</span><span>Learning theory · October 2026</span></div>
+              <h3><a href={selectionPaper.href} target="_blank" rel="noreferrer">{selectionPaper.title}</a></h3>
               <p className="paper-lead">How much can you lose by keeping just three examples?</p>
               <p>For mean regression, this paper determines the exact worst-case risk inflation of
                 selecting three support points, with repetition allowed, and predicting their
@@ -104,10 +143,10 @@ export default function Home() {
                 and characterizes how the extremal geometry changes with dimension.</p>
               <div className="paper-byline">Xi Qin · Wuhan University <span>03 October 2026</span></div>
               <div className="paper-links">
-                <a className="button button-accent" href={latestPaper.pdf} target="_blank" rel="noreferrer">Read the paper <Arrow /></a>
-                <a className="text-link" href={latestPaper.source}>Source &amp; verification <span aria-hidden="true">↓</span></a>
+                <a className="button button-accent" href={selectionPaper.pdf} target="_blank" rel="noreferrer">Read the paper <Arrow /></a>
+                <a className="text-link" href={selectionPaper.source}>Source &amp; verification <span aria-hidden="true">↓</span></a>
               </div>
-              <a className="doi" href={`https://doi.org/${latestPaper.doi}`} target="_blank" rel="noreferrer">DOI {latestPaper.doi} <Arrow /></a>
+              <a className="doi" href={`https://doi.org/${selectionPaper.doi}`} target="_blank" rel="noreferrer">DOI {selectionPaper.doi} <Arrow /></a>
             </div>
             <aside className="theorem-panel" aria-label="Exact excess risk by dimension">
               <p className="eyebrow">The sharp answer</p>
@@ -119,7 +158,7 @@ export default function Home() {
                 <div><dt>d ≥ 6</dt><dd>(d − 2) / (3d)</dd></div>
               </dl>
               <p className="theorem-note">Exact constants in every dimension.<br />Manuscript, proofs, and verification scripts openly available.</p>
-              <a href={latestPaper.href} target="_blank" rel="noreferrer">View the Zenodo record <Arrow /></a>
+              <a href={selectionPaper.href} target="_blank" rel="noreferrer">View the Zenodo record <Arrow /></a>
             </aside>
           </article>
           <article className="paper-secondary">
@@ -136,6 +175,7 @@ export default function Home() {
             </div>
           </article>
         </section>
+        <p className="data-note">Research updated <time dateTime={researchUpdated}>4 November 2026</time>.</p>
         <section id="contributions" className="section" aria-labelledby="contributions-title">
           <SectionHeading number="02" label="Open-source contributions" title="Built together. Merged upstream." id="contributions-title">
             <p className="section-intro">From query engines to developer tools and agent security.</p>
@@ -200,7 +240,7 @@ export default function Home() {
             <a className="text-link" href="mailto:3624951962qx@gmail.com">3624951962qx@gmail.com <Arrow /></a>
           </div>
           <div className="footer-bottom"><span>© 2026 Xi Qin</span><span className="footer-motto">Nihil ultra testimonium.</span>
-            <div><a href="https://github.com/QinXi-ai" target="_blank" rel="noreferrer">GitHub <Arrow /></a><a href={latestPaper.href} target="_blank" rel="noreferrer">Zenodo <Arrow /></a><a href="#top">Back to top ↑</a></div>
+            <div><a href="https://github.com/QinXi-ai" target="_blank" rel="noreferrer">GitHub <Arrow /></a><a href={latestPaper.href}>Latest paper <Arrow /></a><a href="#top">Back to top ↑</a></div>
           </div>
         </footer>
       </div>

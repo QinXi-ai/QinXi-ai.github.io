@@ -1,9 +1,25 @@
 // Public contribution snapshot checked against GitHub on 2026-10-20.
 export const portfolioUpdated = '2026-10-20';
 export const contributionStats = { merged: 67, repositories: 27, recent: 14 };
+export const researchUpdated = '2026-11-04';
+export const researchStats = { papers: 4, accepted: 1, preprints: 3 };
+export const latestPaper = {
+  title: 'Failure Steps Are Not Repair Intents: Measuring Actionable Ambiguity in Multi-Agent System Diagnosis',
+  href: '#failure-steps-are-not-repair-intents',
+  venue: 'WSDM 2027 Findings',
+  status: 'Accepted',
+  author: 'First author: Xi Qin',
+};
+export const identityPaper = {
+  title: "Instance-Optimal Identity Testing at the Original Total-Variation Radius: Resolving Canonne's 2024 Open Question 1",
+  href: 'https://zenodo.org/records/23584756',
+  pdf: 'https://zenodo.org/records/23584756/files/instance_optimal_identity_testing_v1.pdf',
+  source: 'https://zenodo.org/records/23584756/files/instance_optimal_identity_testing_v1_source.zip',
+  doi: '10.5281/zenodo.23584756',
+};
 export const mergedSearch =
   'https://github.com/search?q=is%3Apr+author%3AQinXi-ai+is%3Amerged+is%3Apublic+-user%3AQinXi-ai&type=pullrequests';
-export const latestPaper = {
+export const selectionPaper = {
   title: 'Exact Three-Example Selection in Every Dimension',
   date: '2026-10-03',
   doi: '10.5281/zenodo.23119254',

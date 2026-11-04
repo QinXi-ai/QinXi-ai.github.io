@@ -66,6 +66,7 @@ nav { display: flex; gap: 26px; font-size: 13px; }
 .section-heading h2 { font: 400 clamp(32px, 4vw, 48px)/1.12 var(--font-display); letter-spacing: -.045em; margin: 20px 0 14px; }
 .section-intro { font-size: 14px; color: var(--muted); line-height: 1.7; margin: 0; }
 .paper-feature { display: grid; grid-template-columns: 1.55fr 1fr; border: 1px solid var(--line); }
+.paper-secondary + .paper-feature { margin-top: 32px; }
 .paper-main { padding: 38px 40px; }
 .paper-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 14px; font: 10px var(--font-mono); color: var(--muted); }
 .tag { border: 1px solid var(--accent); color: var(--accent); padding: 6px 8px; text-transform: uppercase; letter-spacing: .05em; }
