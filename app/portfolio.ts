@@ -1,34 +1,51 @@
-// Public contribution snapshot checked against GitHub on 2026-10-20.
-export const portfolioUpdated = '2026-10-20';
-export const contributionStats = { merged: 67, repositories: 27, recent: 14 };
-export const researchUpdated = '2026-11-04';
+// Public contribution snapshot checked against GitHub on 2026-11-25.
+export const portfolioUpdated = '2026-11-25';
+export const contributionStats = { merged: 98, repositories: 28, recent: 31 };
+export const researchUpdated = '2026-11-25';
 export const researchStats = { papers: 4, accepted: 1, preprints: 3 };
+
 export const latestPaper = {
-  title: 'Failure Steps Are Not Repair Intents: Measuring Actionable Ambiguity in Multi-Agent System Diagnosis',
+  title:
+    'Failure Steps Are Not Repair Intents: Measuring Actionable Ambiguity in Multi-Agent System Diagnosis',
   href: '#failure-steps-are-not-repair-intents',
   venue: 'WSDM 2027 Findings',
   status: 'Accepted',
   author: 'First author: Xi Qin',
 };
+
 export const identityPaper = {
-  title: "Instance-Optimal Identity Testing at the Original Total-Variation Radius: Resolving Canonne's 2024 Open Question 1",
+  title:
+    "Instance-Optimal Identity Testing at the Original Total-Variation Radius: Resolving Canonne's 2024 Open Question 1",
   href: 'https://zenodo.org/records/23584756',
   pdf: 'https://zenodo.org/records/23584756/files/instance_optimal_identity_testing_v1.pdf',
-  source: 'https://zenodo.org/records/23584756/files/instance_optimal_identity_testing_v1_source.zip',
+  source:
+    'https://zenodo.org/records/23584756/files/instance_optimal_identity_testing_v1_source.zip',
   doi: '10.5281/zenodo.23584756',
+  leanRepo: 'https://github.com/QinXi-ai/identity-testing-lean',
+  leanModules: 530,
 };
+
 export const mergedSearch =
   'https://github.com/search?q=is%3Apr+author%3AQinXi-ai+is%3Amerged+is%3Apublic+-user%3AQinXi-ai&type=pullrequests';
+
 export const selectionPaper = {
   title: 'Exact Three-Example Selection in Every Dimension',
   date: '2026-10-03',
   doi: '10.5281/zenodo.23119254',
   href: 'https://zenodo.org/records/23119254',
   pdf: 'https://zenodo.org/records/23119254/files/exact-three-example-selection.pdf',
-  source: 'https://zenodo.org/records/23119254/files/exact-three-example-selection-source-v1.0.zip',
+  source:
+    'https://zenodo.org/records/23119254/files/exact-three-example-selection-source-v1.0.zip',
 };
 
 export const projects = [
+  {
+    name: 'identity-testing-lean',
+    description:
+      "530-module Lean 4 formalization of instance-optimal identity testing at the original TV radius, including certified rational interval evaluation and axiom audit.",
+    language: 'Lean 4',
+    href: 'https://github.com/QinXi-ai/identity-testing-lean',
+  },
   {
     name: 'Pocket MOSS Image',
     description:
@@ -81,6 +98,66 @@ export const projects = [
 ];
 
 export const contributions = [
+  {
+    repo: 'dllm-labs / mojo-dllm',
+    number: '#175',
+    title: 'Calibrate DiffusionGemma parity on fixed reference inputs',
+    category: 'GPU & Mojo',
+    summary:
+      'Established deterministic reference calibration and numerical parity checks for DiffusionGemma inference paths across cached and uncached execution.',
+    proof: 'Fixed-reference parity suite · cached path verification',
+    stats: '+10,825 −129 · 20 files',
+    mergedAt: '2026-11-24',
+    href: 'https://github.com/dllm-labs/mojo-dllm/pull/175',
+  },
+  {
+    repo: 'lacs-project / sysknife',
+    number: '#786',
+    title: 'Export both audit chains and verify them offline',
+    category: 'Agent security',
+    summary:
+      'Added offline export and cryptographic verification for dual audit chains, letting operators inspect and validate execution integrity without a live daemon.',
+    proof: 'Tamper-detection tests · end-to-end chain verification',
+    stats: '+306 −28 · 11 files',
+    mergedAt: '2026-11-15',
+    href: 'https://github.com/lacs-project/sysknife/pull/786',
+  },
+  {
+    repo: 'apache / datafusion',
+    number: '#25988',
+    title: 'Add opt-in native grouped integer DISTINCT counts',
+    category: 'Query engines',
+    summary:
+      'Implemented an opt-in native grouped integer path for COUNT(DISTINCT), bypassing generic accumulator overhead on high-cardinality integer columns.',
+    proof: 'SQL logic tests · planner & accumulator benchmarks',
+    stats: '+779 −12 · 21 files',
+    mergedAt: '2026-11-08',
+    href: 'https://github.com/apache/datafusion/pull/25988',
+  },
+  {
+    repo: 'dllm-labs / mojo-dllm',
+    number: '#73',
+    title: 'Batch long GQA loads without changing softmax order',
+    category: 'GPU & Mojo',
+    summary:
+      'Batched long grouped-query attention loads to improve memory throughput while preserving exact floating-point softmax accumulation order.',
+    proof: 'Order-preserving numerical checks · long-context GQA tests',
+    stats: '+7,108 −82 · 12 files',
+    mergedAt: '2026-11-04',
+    href: 'https://github.com/dllm-labs/mojo-dllm/pull/73',
+  },
+  {
+    repo: 'dllm-labs / mojo-dllm',
+    number: '#71',
+    title: 'Tune Q4_K tile dispatch for RTX Blackwell with 6000D benchmarks',
+    category: 'GPU & Mojo',
+    summary:
+      'Profiled and tuned Q4_K quantized matmul tile dispatch schedules specifically for RTX Blackwell GPUs, backed by reproducible RTX PRO 6000D benchmarks.',
+    proof: 'RTX PRO 6000D benchmarks · quantized kernel parity',
+    stats: '+5,739 −14 · 19 files',
+    mergedAt: '2026-11-03',
+    href: 'https://github.com/dllm-labs/mojo-dllm/pull/71',
+  },
   {
     repo: 'apache / datafusion',
     number: '#25765',
@@ -143,18 +220,6 @@ export const contributions = [
     href: 'https://github.com/pydata/xarray/pull/11552',
   },
   {
-    repo: 'awslabs / stickler',
-    number: '#284',
-    title: 'Replace sklearn metrics with NumPy',
-    category: 'Numerical methods',
-    summary:
-      'Implemented ROC AUC, Rand index, V-measure, and Kendall tau-b in NumPy, removing scikit-learn from the core dependencies while checking results against reference implementations.',
-    proof: '130 affected/oracle tests · 1,947 portable tests passed',
-    stats: '+269 −66 · 10 files',
-    mergedAt: '2026-08-28',
-    href: 'https://github.com/awslabs/stickler/pull/284',
-  },
-  {
     repo: 'AndreaBozzo / dataprof',
     number: '#655',
     title: 'Read and profile only selected columns',
@@ -165,6 +230,18 @@ export const contributions = [
     stats: '+934 −133 · 24 files',
     mergedAt: '2026-09-01',
     href: 'https://github.com/AndreaBozzo/dataprof/pull/655',
+  },
+  {
+    repo: 'awslabs / stickler',
+    number: '#284',
+    title: 'Replace sklearn metrics with NumPy',
+    category: 'Numerical methods',
+    summary:
+      'Implemented ROC AUC, Rand index, V-measure, and Kendall tau-b in NumPy, removing scikit-learn from the core dependencies while checking results against reference implementations.',
+    proof: '130 affected/oracle tests · 1,947 portable tests passed',
+    stats: '+269 −66 · 10 files',
+    mergedAt: '2026-08-28',
+    href: 'https://github.com/awslabs/stickler/pull/284',
   },
   {
     repo: '3b1b / manim',
@@ -179,6 +256,80 @@ export const contributions = [
     href: 'https://github.com/3b1b/manim/pull/2501',
   },
 ];
+
+export const domainClusters = [
+  {
+    id: 'Agent security',
+    label: 'Agent security & systems',
+    prs: 47,
+    repos: 3,
+    highlight: 'sysknife · agent-sweep · atomic',
+    accent: '#89d3d1',
+  },
+  {
+    id: 'GPU & Mojo',
+    label: 'GPU kernels & Mojo',
+    prs: 16,
+    repos: 1,
+    highlight: 'dllm-labs/mojo-dllm (RTX Blackwell)',
+    accent: '#e3cfa0',
+  },
+  {
+    id: 'Query engines',
+    label: 'Query & data engines',
+    prs: 5,
+    repos: 3,
+    highlight: 'apache/datafusion · dataprof · Vex',
+    accent: '#6bd4a5',
+  },
+  {
+    id: 'Developer tools',
+    label: 'Developer tooling & CLI',
+    prs: 16,
+    repos: 11,
+    highlight: 'vscode-eslint · clinker · seiri · shot-scraper',
+    accent: '#b89fd0',
+  },
+  {
+    id: 'Scientific Python',
+    label: 'Scientific & numerical',
+    prs: 6,
+    repos: 4,
+    highlight: 'xarray · stickler · manim · numax',
+    accent: '#4ea8ab',
+  },
+] as const;
+
+export const recentMerges = [
+  {
+    repo: 'mojo-dllm',
+    number: '#175',
+    title: 'Calibrate DiffusionGemma parity on fixed reference inputs',
+    date: '24 Nov',
+    href: 'https://github.com/dllm-labs/mojo-dllm/pull/175',
+  },
+  {
+    repo: 'sysknife',
+    number: '#828',
+    title: 'Pin the MCP publisher and scan all CI workflows',
+    date: '20 Nov',
+    href: 'https://github.com/lacs-project/sysknife/pull/828',
+  },
+  {
+    repo: 'sysknife',
+    number: '#786',
+    title: 'Export both audit chains and verify them offline',
+    date: '15 Nov',
+    href: 'https://github.com/lacs-project/sysknife/pull/786',
+  },
+  {
+    repo: 'datafusion',
+    number: '#25988',
+    title: 'Add opt-in native grouped integer DISTINCT counts',
+    date: '08 Nov',
+    href: 'https://github.com/apache/datafusion/pull/25988',
+  },
+] as const;
 
 // Award levels, tracks, and years confirmed by Xi Qin on 2026-10-02.
 // English event names are descriptive translations; background sources are linked.

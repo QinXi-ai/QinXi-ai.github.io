@@ -2,6 +2,7 @@ import { ContributionsSection } from './components/ContributionsSection';
 import { FluidForgeCanvas } from './components/FluidForgeCanvas';
 import { SimplexFieldArt } from './components/SimplexFieldArt';
 import { SiteChrome } from './components/SiteChrome';
+import { TelemetryCounter } from './components/TelemetryCounter';
 import {
   contributionStats,
   identityPaper,
@@ -109,8 +110,8 @@ export default function Home() {
         </section>
 
         <div className="overview" aria-label="Portfolio at a glance">
-          <a href="#research" className="overview-tile mineral-card">
-            <strong>{String(researchStats.papers).padStart(2, '0')}</strong>
+          <a href="#research" className="overview-tile mineral-card" data-reveal="">
+            <TelemetryCounter value={researchStats.papers} pad={2} />
             <span>
               Research papers
               <br />
@@ -123,18 +124,29 @@ export default function Home() {
             target="_blank"
             rel="noreferrer"
             className="overview-tile mineral-card"
+            data-reveal=""
+            data-delay="1"
           >
-            <strong>{contributionStats.merged}</strong>
+            <TelemetryCounter value={contributionStats.merged} />
             <span>
               Public PRs merged <Arrow />
             </span>
           </a>
-          <div className="overview-tile mineral-card">
-            <strong>{contributionStats.repositories}</strong>
+          <div
+            className="overview-tile mineral-card"
+            data-reveal=""
+            data-delay="2"
+          >
+            <TelemetryCounter value={contributionStats.repositories} />
             <span>Repositories contributed to</span>
           </div>
-          <a href="#recognition" className="overview-tile mineral-card">
-            <strong>04</strong>
+          <a
+            href="#recognition"
+            className="overview-tile mineral-card"
+            data-reveal=""
+            data-delay="3"
+          >
+            <TelemetryCounter value={4} pad={2} />
             <span>
               Competition awards <Arrow />
             </span>
@@ -263,6 +275,14 @@ export default function Home() {
               </a>
               <a className="text-link" href={identityPaper.source}>
                 LaTeX source <span aria-hidden="true">↓</span>
+              </a>
+              <a
+                className="text-link"
+                href={identityPaper.leanRepo}
+                target="_blank"
+                rel="noreferrer"
+              >
+                Lean 4 proof ({identityPaper.leanModules} modules) <Arrow />
               </a>
               <a
                 className="doi"
@@ -409,7 +429,7 @@ export default function Home() {
 
           <p className="data-note research-note">
             Research updated{' '}
-            <time dateTime={researchUpdated}>4 November 2026</time>.
+            <time dateTime={researchUpdated}>25 November 2026</time>.
           </p>
         </section>
 

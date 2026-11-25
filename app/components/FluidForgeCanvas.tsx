@@ -1,7 +1,13 @@
 'use client';
 
 import { useEffect, useRef, useState, useSyncExternalStore } from 'react';
-import type { mountFluidField } from './fluidField';
+import type { FieldMode, mountFluidField } from './fluidField';
+
+const FIELD_MODES: readonly { id: FieldMode; label: string }[] = [
+  { id: 'mineral', label: 'MINERAL' },
+  { id: 'topo', label: 'TOPO' },
+  { id: 'calm', label: 'CALM' },
+];
 
 function subscribeReducedMotion(onStoreChange: () => void) {
   const mq = window.matchMedia('(prefers-reduced-motion: reduce)');
@@ -25,8 +31,10 @@ export function FluidForgeCanvas() {
     getReducedMotionServerSnapshot,
   );
   const [manualPaused, setManualPaused] = useState<boolean | null>(null);
+  const [mode, setMode] = useState<FieldMode>('mineral');
   const paused = manualPaused ?? prefersReducedMotion;
   const pausedRef = useRef(paused);
+  const modeRef = useRef(mode);
   const fieldRef = useRef<ReturnType<typeof mountFluidField>>(null);
   const [ready, setReady] = useState(false);
 
@@ -34,6 +42,33 @@ export function FluidForgeCanvas() {
     pausedRef.current = paused;
     fieldRef.current?.setPaused(paused);
   }, [paused]);
+
+  useEffect(() => {
+    modeRef.current = mode;
+    fieldRef.current?.setMode(mode);
+  }, [mode]);
+
+  useEffect(() => {
+    const onCommand = (e: Event) => {
+      const detail = (
+        e as CustomEvent<
+          | { type: 'pulse' }
+          | { type: 'mode'; mode: FieldMode }
+          | { type: 'toggle-pause' }
+        >
+      ).detail;
+      if (!detail) return;
+      if (detail.type === 'pulse') {
+        fieldRef.current?.ripple();
+      } else if (detail.type === 'mode') {
+        setMode(detail.mode);
+      } else if (detail.type === 'toggle-pause') {
+        setManualPaused((prev) => !(prev ?? prefersReducedMotion));
+      }
+    };
+    window.addEventListener('forge:command', onCommand);
+    return () => window.removeEventListener('forge:command', onCommand);
+  }, [prefersReducedMotion]);
 
   useEffect(() => {
     let disposed = false;
@@ -44,6 +79,7 @@ export function FluidForgeCanvas() {
       fieldRef.current = renderer.mountFluidField(
         canvasRef.current,
         pausedRef.current,
+        modeRef.current,
       );
       setReady(Boolean(fieldRef.current));
     }
@@ -69,6 +105,16 @@ export function FluidForgeCanvas() {
     };
   }, []);
 
+  const cycleMode = () => {
+    const idx = FIELD_MODES.findIndex((m) => m.id === mode);
+    const next = FIELD_MODES[(idx + 1) % FIELD_MODES.length];
+    setMode(next.id);
+    fieldRef.current?.ripple(0.5, 0.5);
+  };
+
+  const activeModeLabel =
+    FIELD_MODES.find((m) => m.id === mode)?.label ?? 'MINERAL';
+
   return (
     <>
       <div className="forge-backdrop" aria-hidden="true">
@@ -88,7 +134,16 @@ export function FluidForgeCanvas() {
             aria-pressed={!paused}
           >
             <span className={paused ? 'hud-dot hud-dot-paused' : 'hud-dot'} />
-            <span>{paused ? 'FIELD PAUSED' : 'FLUID FIELD · LIVE'}</span>
+            <span>{paused ? 'PAUSED' : 'LIVE'}</span>
+          </button>
+          <span className="field-hud-sep" aria-hidden="true" />
+          <button
+            type="button"
+            className="field-hud-btn field-hud-mode"
+            onClick={cycleMode}
+            title="Cycle shader mode: Mineral / Topographic / Calm"
+          >
+            <span>MODE · {activeModeLabel}</span>
           </button>
           <button
             type="button"
