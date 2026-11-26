@@ -38,13 +38,16 @@ interface LeanNode {
   detail: string;
 }
 
+const LEAN_CARD_WIDTH = 118;
+const LEAN_CARD_HEIGHT = 46;
+
 const LEAN_NODES: readonly LeanNode[] = [
   {
     id: 'target',
     file: 'Target.lean',
     short: 'Target & Scale',
-    x: 84,
-    y: 190,
+    x: 66,
+    y: 128,
     exportName: 'complexityScale(q, ε)',
     detail: 'Allocation, overlap moment, positive roots, and TV-radius scale.',
   },
@@ -52,8 +55,8 @@ const LEAN_NODES: readonly LeanNode[] = [
     id: 'alloc',
     file: 'AllocationExistence.lean',
     short: 'Allocation',
-    x: 215,
-    y: 94,
+    x: 220,
+    y: 38,
     exportName: 'strictConcavity · derivatives',
     detail: 'Strict concavity, explicit derivatives, and sharp Hölder envelope.',
   },
@@ -61,8 +64,8 @@ const LEAN_NODES: readonly LeanNode[] = [
     id: 'heavy',
     file: 'HeavyUpperAssembly.lean',
     short: 'Upper / Lower',
-    x: 215,
-    y: 190,
+    x: 220,
+    y: 128,
     exportName: 'Heavy + Moment bounds',
     detail: 'Matching upper tests & prior lower bounds on countable alphabets.',
   },
@@ -70,8 +73,8 @@ const LEAN_NODES: readonly LeanNode[] = [
     id: 'rational',
     file: 'RationalComplexityScale.lean',
     short: 'Rational Eval',
-    x: 215,
-    y: 288,
+    x: 220,
+    y: 218,
     exportName: 'rationalComplexityInterval',
     detail: 'Polynomial-time factor-two interval 0 ≤ L ≤ scale ≤ U ≤ 2L.',
   },
@@ -79,8 +82,8 @@ const LEAN_NODES: readonly LeanNode[] = [
     id: 'char',
     file: 'CountableCharacterization.lean',
     short: 'Main Theorem',
-    x: 348,
-    y: 142,
+    x: 374,
+    y: 83,
     exportName: 'countable_characterization',
     detail: "Resolves Canonne's COLT 2024 Open Question 1 at original TV radius.",
   },
@@ -88,8 +91,8 @@ const LEAN_NODES: readonly LeanNode[] = [
     id: 'verify',
     file: 'Verification.lean',
     short: 'Axiom Audit',
-    x: 348,
-    y: 248,
+    x: 374,
+    y: 173,
     exportName: '530 modules · 0 sorrys',
     detail: 'Automated type, axiom, and executable rational interval audit.',
   },
@@ -104,6 +107,19 @@ const LEAN_EDGES: readonly [string, string][] = [
   ['rational', 'verify'],
   ['char', 'verify'],
 ];
+
+function leanEdgePath(from: LeanNode, to: LeanNode) {
+  if (from.x === to.x) {
+    return `M ${from.x} ${from.y + LEAN_CARD_HEIGHT / 2} V ${to.y - LEAN_CARD_HEIGHT / 2}`;
+  }
+  const startX = from.x + LEAN_CARD_WIDTH / 2;
+  const endX = to.x - LEAN_CARD_WIDTH / 2;
+  const midX = (startX + endX) / 2;
+  const offset = Math.sign(to.y - from.y) * 10;
+  const startY = from.y + offset;
+  const endY = to.y - offset;
+  return `M ${startX} ${startY} C ${midX} ${startY}, ${midX} ${endY}, ${endX} ${endY}`;
+}
 
 const KERNEL_PRESETS = [
   {
@@ -565,13 +581,13 @@ export function SimplexFieldArt() {
             </a>
           </div>
 
-          <div className="simplex-frame">
+          <div className="simplex-frame lean-frame">
             <svg
-              viewBox={`0 0 ${VIEW_W} ${VIEW_H}`}
+              viewBox="0 0 440 256"
               className="simplex-svg"
               aria-label="Lean 4 proof dependency graph"
             >
-              <rect width={VIEW_W} height={VIEW_H} fill="url(#mineral-dots)" />
+              <rect width="440" height="256" fill="url(#mineral-dots)" />
               <defs>
                 <pattern
                   id="mineral-dots"
@@ -589,12 +605,10 @@ export function SimplexFieldArt() {
                 if (!a || !b) return null;
                 const lit = fromId === selectedLeanId || toId === selectedLeanId;
                 return (
-                  <line
+                  <path
                     key={`${fromId}-${toId}`}
-                    x1={a.x}
-                    y1={a.y}
-                    x2={b.x}
-                    y2={b.y}
+                    d={leanEdgePath(a, b)}
+                    fill="none"
                     stroke={lit ? '#e3cfa0' : '#89d3d1'}
                     strokeWidth={lit ? 1.8 : 1}
                     strokeDasharray={lit ? undefined : '4 5'}
@@ -612,10 +626,10 @@ export function SimplexFieldArt() {
                     onClick={() => setSelectedLeanId(node.id)}
                   >
                     <rect
-                      x={node.x - 56}
-                      y={node.y - 22}
-                      width="112"
-                      height="44"
+                      x={node.x - LEAN_CARD_WIDTH / 2}
+                      y={node.y - LEAN_CARD_HEIGHT / 2}
+                      width={LEAN_CARD_WIDTH}
+                      height={LEAN_CARD_HEIGHT}
                       rx="8"
                       fill={
                         active
@@ -631,7 +645,7 @@ export function SimplexFieldArt() {
                       textAnchor="middle"
                       fill={active ? '#e3cfa0' : '#ecf3f1'}
                       fontFamily="var(--font-mono)"
-                      fontSize="10"
+                      fontSize="12"
                     >
                       {node.short}
                     </text>
@@ -639,9 +653,9 @@ export function SimplexFieldArt() {
                       x={node.x}
                       y={node.y + 13}
                       textAnchor="middle"
-                      fill="#738a88"
+                      fill="#a2b6b3"
                       fontFamily="var(--font-mono)"
-                      fontSize="8"
+                      fontSize="10"
                     >
                       ✓ verified
                     </text>
@@ -649,15 +663,10 @@ export function SimplexFieldArt() {
                 );
               })}
 
-              <text
-                x="220"
-                y="366"
-                textAnchor="middle"
-                className="diagram-caption"
-              >
-                CLICK NODE TO INSPECT · ZERO SORRYS · CANONNE COLT 2024 Q1
-              </text>
             </svg>
+            <p className="lean-caption">
+              CLICK NODE TO INSPECT · ZERO SORRYS · CANONNE COLT 2024 Q1
+            </p>
 
             <div className="lab-readout">
               <div className="lab-readout-top">

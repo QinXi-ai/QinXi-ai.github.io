@@ -739,6 +739,19 @@ footer h2 em {
   cursor: pointer;
 }
 
+.lean-caption {
+  margin: 4px 0 0;
+  color: var(--muted);
+  font: 10px/1.5 var(--font-mono);
+  text-align: center;
+}
+
+.lean-frame .lab-readout-top {
+  flex-wrap: wrap;
+  overflow-wrap: anywhere;
+  row-gap: 3px;
+}
+
 .lab-readout {
   margin-top: 8px;
   padding: 10px 12px;
